@@ -61,14 +61,5 @@ CREATE TABLE IF NOT EXISTS dvd (
 ) ENGINE = InnoDB;
 
 
-INSERT INTO genero (descricao) 
-VALUES 
-('Comédia'),
-('Drama'),
-('Terror'),
-('Romance'),
-('Ficção Científica');
-
-
 ALTER TABLE dvd
 ADD COLUMN url_cartaz VARCHAR(255) NULL AFTER titulo;
