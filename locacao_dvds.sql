@@ -26,7 +26,6 @@ CREATE TABLE IF NOT EXISTS ator (
 CREATE TABLE IF NOT EXISTS dvd (
   id INT NOT NULL AUTO_INCREMENT,
   titulo VARCHAR(100) NOT NULL,
-  url_cartaz VARCHAR(250) NOT NULL,
   ano_lancamento INT NOT NULL,
   ator_principal_id INT NOT NULL,
   ator_coadjuvante_id INT NOT NULL,
@@ -62,3 +61,14 @@ CREATE TABLE IF NOT EXISTS dvd (
 ) ENGINE = InnoDB;
 
 
+INSERT INTO genero (descricao) 
+VALUES 
+('Comédia'),
+('Drama'),
+('Terror'),
+('Romance'),
+('Ficção Científica');
+
+
+ALTER TABLE dvd
+ADD COLUMN url_cartaz VARCHAR(255) NULL AFTER titulo;
