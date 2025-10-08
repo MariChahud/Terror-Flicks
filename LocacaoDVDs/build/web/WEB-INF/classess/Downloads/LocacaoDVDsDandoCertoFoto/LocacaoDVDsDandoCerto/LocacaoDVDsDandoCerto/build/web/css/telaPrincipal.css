@@ -1,0 +1,128 @@
+
+:root {
+    --cor-fundo: #121212;
+    --cor-texto-secundario: #a8a8a8;
+    --cor-laranja-brilho: #ff6700;
+    --cor-laranja-sombra: #c04f00;
+    --fonte-titulo: 'Cinzel', serif;
+    --fonte-corpo: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto-secundario);
+    background-color: #000;
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url('../img/fundo.png'); 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://www.transparenttextures.com/patterns/worn-dots.png');
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+header {
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 25px 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--cor-laranja-sombra);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-container img {
+    height: 60px;
+    filter: drop-shadow(0 0 10px var(--cor-laranja-brilho));
+}
+
+header h1 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.8em, 4vw, 2.5em);
+    color: var(--cor-laranja-brilho);
+    margin: 0;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px var(--cor-laranja-sombra), 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--cor-laranja-brilho);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 400;
+    padding: 5px 0;
+    position: relative;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+    opacity: 1;
+    text-shadow: 0 0 8px var(--cor-laranja-brilho);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--cor-laranja-brilho);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.conteudo {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0a0a0a;
+    color: #666;
+    font-size: 0.9em;
+    border-top: 1px solid var(--cor-laranja-sombra);
+}
